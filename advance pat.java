@@ -1,5 +1,44 @@
 import java.util.Scanner;
 class Main{
+public static void romBus( int n ){
+        for( int i = 1; i<=n; i++){
+            for( int j = 1; j<=n-i; j++){
+            System.out.print(" ");
+          }  
+          for( int j = 1; j<=n; j++){
+              if( i == 1 || i == n || j == 1 || j == n){
+                System.out.print("* ");
+             }else {
+                 System.out.print("  ");
+             }
+          }
+          System.out.println();
+        }
+    }
+ public static void oneZero( int n ){
+        for( int i = 1; i<=n; i++){
+            for( int j = 1; j <= i; j++){
+                if( (i + j)%2==0){
+                    System.out.print("1 ");
+                }else{
+                     System.out.print("0 ");
+                }
+            }
+            System.out.println();
+        }
+    }
+public static void tubb( int n ){
+       for( int i = 1; i <= n; i++){
+          for( int j = 1; j <= n; j++){
+              if( j == 1 || j == n || i == n ){
+                   System.out.print("* ");
+              }else {
+                  System.out.print("  ");
+              }
+          }
+           System.out.println();
+       }    
+   } 
     
  public static void mirrPat( int n ){
         for( int i = 1; i <= n; i++){
