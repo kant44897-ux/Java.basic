@@ -1,7 +1,55 @@
 import java.util.*;
 
 public class ArraysCC {
+public static void sumPri(int n , int are[]){
+         int currSum = 0;
+          int maxSum = Integer.MIN_VALUE;
+          int prifix[] = new int[n];
+           prifix[0] = are[0];
+         for( int i = 1; i < n; i++){
+          prifix[i] = prifix[i-1] + are[i];
+         }
+          for( int i = 0; i < n; i++){
+            for( int j = i; j < n; j++){
 
+                currSum =  i == 0 ? prifix[j]: prifix[j] - prifix[i-1]; 
+
+                 if( currSum > maxSum ){
+               maxSum = currSum;
+              }
+        }
+           
+     }
+     System.out.println("max sum = " + maxSum);
+ }        
+
+public static void maxsubareSum(int n , int are[]){
+    int currSum = 0;
+    int maxSum = Integer.MIN_VALUE;
+    for( int i = 0; i < n; i++){
+        for( int j = i; j < n; j++){
+            currSum = 0;
+          for( int k = i; k <= j; k++){
+            currSum = currSum + are[k];
+          }
+        System.out.println(currSum);
+           if( currSum > maxSum ){
+               maxSum = currSum;
+     }
+        }
+    }
+    System.out.println("max sum = " + maxSum);
+}
+public static void subare(int n , int are[]){
+   for( int i = 0; i < n; i++){ //. i is for start
+    for( int j = i; j < n; j++){ // j is for end 
+       for( int k = i; k < j; k++){
+        System.out.print(are[k] + " " );
+       }
+       System.out.println();
+    }
+   }
+}
          
 public static void pairs(int n , int are[]){
     for(int i = 0; i < n; i++){
