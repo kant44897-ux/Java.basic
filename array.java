@@ -1,6 +1,40 @@
 import java.util.*;
-
 public class ArraysCC {
+         
+public static int trapRainW(int n , int are[]){
+   int lmax[] = new int[n];
+   int rmax[] = new int[n];
+
+   lmax[0] = are[0];
+   for( int i = 1; i < n; i++){
+   lmax[i] = Math.max(are[i] , lmax[i-1]);
+      }
+    rmax[n-1] = are[n-1];
+    for( int i = n-2; i >= 0; i--){
+    rmax[i] = Math.max(are[i] , rmax[i + 1]);
+    }
+    int tp = 0; 
+    for( int i = 0; i < n; i++){
+    int wl = Math.min(lmax[i], rmax[i]);
+    tp = tp + wl - are[i];
+    }
+    return tp;
+    }
+public static void kadanS(int n , int are[]){
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        for(int i = 0; i < n; i++){
+            currSum = currSum + are[i];
+            if(currSum > maxSum){
+                maxSum = currSum;
+            }
+            if(currSum < 0){
+                currSum = 0;
+                System.out.println(currSum);
+            }
+        }
+           System.out.println("max sum = " + maxSum);
+    }
 public static void sumPri(int n , int are[]){
          int currSum = 0;
           int maxSum = Integer.MIN_VALUE;
