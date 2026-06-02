@@ -1,6 +1,18 @@
 import java.util.*;
 public class ArraysCC {
-         
+public static int stock(int n , int are[]){
+        int bp = Integer.MAX_VALUE;
+        int maxp = 0;
+        for(int i = 0; i < n; i++){
+            if( bp < are[i]){
+                int profit = are[i] - bp;
+                maxp = Math.max(maxp, profit);
+            }else {
+                bp = are[i];
+            }
+        }
+        return maxp;
+   }         
 public static int trapRainW(int n , int are[]){
    int lmax[] = new int[n];
    int rmax[] = new int[n];
