@@ -1,3 +1,14 @@
+26.  public static int repeted(int n , int are[] ) {
+       int i = 0; 
+       for( int j = 1; j < n; j++ ) {
+           if(are[i] != are[j]){
+               i++;
+               are[i] = are[j];
+               
+           }
+       }
+       return i + 1;
+   } 
 33. public int search(int[] nums, int target) {
         int low = 0; 
         int high = nums.length - 1;
