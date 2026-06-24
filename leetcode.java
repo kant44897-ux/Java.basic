@@ -1,3 +1,37 @@
+136.   public int singleNumber(int[] nums) {
+        int ans = 0; 
+        for( int i = 0; i < nums.length; i++ ) {
+            ans = ans ^ nums[i];
+        }                                            // revise bitwise ope
+        return ans;
+    }
+}
+287.   public int findDuplicate(int[] nums) {
+        for ( int i = 0; i < nums.length - 1; i++ ) {
+            for ( int j = i + 1; j < nums.length; j++ ) {
+                if ( nums[ i ] == nums[ j ] ) {
+                    return nums[ i ];
+                }
+            }
+        }
+        return -1;
+    }
+}
+560.  public int subarraySum(int[] nums, int k) {
+        int count = 0;
+        int currSum = 0;
+        for ( int i = 0; i < nums.length; i++ ) {
+            currSum = 0;
+            for ( int j = i; j < nums.length; j++ ) {
+                currSum += nums[j];
+                if ( currSum == k){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
 26.  public static int repeted(int n , int are[] ) {
        int i = 0; 
        for( int j = 1; j < n; j++ ) {
