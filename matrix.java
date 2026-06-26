@@ -1,5 +1,17 @@
 import java.util.*;
 public class matrix {
+      public static int find(int matrices[][] , int m , int n , int key ) {
+      int count = 0;
+      for ( int i = 0; i < n; i++ ) {
+          for ( int j = 0; j < m; j++ ) {
+              if ( key == matrices[i][j]) {
+                  count++;
+              }
+          }
+      }
+       
+       return count;
+ }
      public static boolean searchD(int matrices[][] , int m , int n , int key ) {
         int i = n - 1; 
         int j = 0;
