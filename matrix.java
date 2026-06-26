@@ -1,5 +1,52 @@
 import java.util.*;
 public class matrix {
+     public static boolean searchD(int matrices[][] , int m , int n , int key ) {
+        int i = n - 1; 
+        int j = 0;
+        while( i >= 0 && j < m ) {
+            if( matrices[i][j] == key ) {
+                System.out.print("key is found at"+ "(" + i +","+ j+ ")" );
+                return true;
+            }
+            else if( key < matrices[i][j] ) {
+                i--;
+            }
+            else {
+                j++;
+            }
+        }
+        System.out.print("key not found");
+        return false;
+    }
+    public static boolean search(int matrices[][] , int m , int n , int key ) {
+     int i = 0; 
+     int j = m-1;
+     while ( i < n && j >= 0) {
+         if ( matrices[i][j] == key ) {
+             System.out.print("key is found at"+ "(" + i +","+ j+ ")" );
+             return true;
+         }
+         else if ( key < matrices[i][j] ) {
+             j--;
+         }
+         else {
+             i++;
+         }
+     }
+         System.out.print("key not found");
+         return false;
+ }
+      public static void digonalSum(int matrices[][] , int m , int n) {
+        int sum = 0; 
+        for ( int i = 0 ; i < n; i++ ) {
+            sum += matrices[i][i];
+             if( i != n - 1 - i ) {
+             sum += matrices[i][n - 1 - i];
+        }
+        }
+       
+        System.out.println("Diagonal Sum: " + sum);
+     }
      public static void spiral(int matrices[][] , int m , int n) {
         int startR = 0; 
         int startC = 0;
@@ -51,7 +98,7 @@ public class matrix {
         int n = sc.nextInt();
         int m = sc.nextInt();
         int matrices[][] = new int [n][m];
-
+     int key = sc.nextInt();
   // this for input.         
         for( int i = 0; i < n; i++ ) {
             for( int j = 0; j < m; j++ ){
@@ -67,7 +114,9 @@ public class matrix {
             }
             System.out.println();
         }
-        spiral(matrices , m , n);
+         // digonalSum(matrices , m , n);
+        // searchD(matrices , m , n , key);
+        // spiral(matrices , m , n);
         sc.close();
 
     }
