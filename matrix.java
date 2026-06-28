@@ -1,5 +1,22 @@
 import java.util.*;
 public class matrix {
+       public static void transpose(int matrices[][] ){
+        int m = matrices.length;
+        int n = matrices[0].length;
+        int[][] trans = new int [n][m];
+        for ( int i = 0; i < m; i++ ) {
+            for( int j = 0; j < n; j++ ) {
+                trans[j][i] = matrices[i][j];
+            }
+        }
+             System.out.print("transpose: " );
+             for ( int i = 0; i < trans.length; i++ ) {
+                 for( int j = 0; j < trans[0].length; j++ ) {
+                     System.out.print(trans[i][j] + " ");
+                 }
+                 System.out.println();
+     }
+ }
       public static int find(int matrices[][] , int m , int n , int key ) {
       int count = 0;
       for ( int i = 0; i < n; i++ ) {
